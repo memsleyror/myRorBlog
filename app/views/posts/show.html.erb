@@ -1,0 +1,20 @@
+<p>Find me in app/views/posts/show.html.erb</p>
+
+<h1>Posts#show View</h1>
+
+
+
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+
+<h3>Comments</h3>
+
+
+<div class="comments">
+<% @post.comments.each do |comment| %>
+		<div class "comment">
+			<span><%= link_to comment.user_comment %></span>
+		</div>
+	<% end %>
+</div>
+
