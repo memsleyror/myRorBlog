@@ -1,15 +1,32 @@
-<h1>This is the Users#index View</h1>
+<h1>This is the Users Index</h1>
 
-
+<%= link_to "New User", new_user_path %><br><br>
 <div class="users">
+
+	<table>
+
+	<tr>
+		<th>Last Name</th>
+	</tr>	
+
 	<% @users.each do |user| %>
+
+		<tr>
 		<div class="user">
 			<span class="name">
-				<%= link_to user.last_name, user %>
+				<td><%= link_to user.last_name, user %></td>
+				<td>Action:</td>
+				<td><%= link_to 'Show', user %></td>
+				<td><%= link_to 'Edit', edit_user_path(user) %></td>
+				<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
 			</span>
-			(<%= user.email %>)
-
 		</div>
+		</tr>
 	<% end %>	
+
+	</table>
+				
+
+
 </div>	
 

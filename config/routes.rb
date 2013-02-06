@@ -1,8 +1,11 @@
 MyBlog::Application.routes.draw do
   
 
+
+
   resources :users
   resources :posts
+  resources :roles
 
   get "welcome/index"
   get "welcome/about"

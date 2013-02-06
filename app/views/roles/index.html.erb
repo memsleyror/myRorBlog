@@ -1,0 +1,29 @@
+
+
+<h1>This is the Roles Index</h1>
+
+<%= link_to "New Role", new_role_path %><br><br>
+
+<div class="roles">
+	
+	<table>
+		<tr>
+			<th>Role</th>
+		</tr>
+	<% @roles.each do |role| %>
+		<tr>
+		<div class="role">
+
+			<span class="name">
+				<td><%= link_to role.role_name, role %></td>
+				<td>Action:</td>
+				<td><%= link_to 'Show', role %></td>
+				<td><%= link_to 'Edit', edit_role_path(role) %></td>
+				<td><%= link_to 'Destroy', role, :confirm => 'Are you sure?', :method => :delete %></td>
+			</span>
+			
+		</div>
+		</tr>
+	<% end %>
+	</table>	
+</div>	

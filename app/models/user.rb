@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   attr_accessible :email, :first_name, :last_name, :profile_pic, :string
+  attr_accessible :role_id
 end

@@ -1,0 +1,16 @@
+<h1>Create a New Role</h1>
+<p>Find me in app/views/roles/new.html.erb</p>
+
+
+<%= form_for @role do |f| %>
+	<p>
+		<%= f.label :role_name %><br/>
+		<%= f.text_field :role_name %>
+	</p>
+
+	<p>
+		<%= f.submit "Create" %>
+	</p>
+
+
+<% end %>
