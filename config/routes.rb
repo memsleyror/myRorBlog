@@ -3,6 +3,7 @@ MyBlog::Application.routes.draw do
 
 
 
+  resources :comments
   resources :users
   resources :posts
   resources :roles

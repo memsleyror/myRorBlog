@@ -14,7 +14,7 @@
 		<tr>
 		<div class="user">
 			<span class="name">
-				<td><%= link_to user.last_name, user %></td>
+				<td><%= link_to user.last_name, user_path(user) %></td>
 				<td>Action:</td>
 				<td><%= link_to 'Show', user %></td>
 				<td><%= link_to 'Edit', edit_user_path(user) %></td>

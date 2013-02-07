@@ -1,2 +1,33 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>This is the Posts Index</h1>
+
+
+<%= link_to "New Post", new_post_path %><br><br>
+<div class="posts">
+
+	<table>
+
+	<tr>
+		<th>Post Title</th>
+	</tr>	
+
+	<% @posts.each do |post| %>
+
+		<tr>
+		<div class="post">
+			<span class="post_title">
+				<td><%= link_to post.title, post_path(post) %></td>
+				<td>Action:</td>
+				<td><%= link_to 'Show', post %></td>
+				<td><%= link_to 'Edit', edit_post_path(post) %></td>
+				<td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+			</span>
+		</div>
+		</tr>
+	<% end %>	
+
+	</table>
+				
+
+
+</div>	
+
