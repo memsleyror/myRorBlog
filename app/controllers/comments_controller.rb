@@ -35,9 +35,9 @@ class CommentsController < ApplicationController
 
   def destroy
 	@comment = Comment.find(params[:id])
-	
+	post = @comment.post
 	if @comment.destroy
-		redirect_to posts_path
+		redirect_to post
 	else
 		flash[:error] = "Error deleting comment"
 		redirect_to @comment

@@ -7,6 +7,10 @@ gem 'rails', '3.2.11'
 
 # gem 'sqlite3'
 
+gem 'carrierwave'
+gem 'rmagick'
+gem 'cancan'
+
 group :development do
   gem 'sqlite3'
 end
