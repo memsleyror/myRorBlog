@@ -10,6 +10,7 @@ gem 'rails', '3.2.11'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'cancan'
+gem 'devise'
 
 group :development do
   gem 'sqlite3'

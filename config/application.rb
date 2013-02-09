@@ -42,6 +42,9 @@ module MyBlog
     #for carrierwave
     #config.autoload_paths += "#{Rails.root}/app/uploaders"
 
+    #for devise
+    config.assets.initialize_on_precompile = false 
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
