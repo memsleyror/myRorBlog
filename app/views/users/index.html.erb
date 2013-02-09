@@ -7,7 +7,10 @@
 
 	<tr>
 		<th>Last Name</th>
+		<th>Role</th>
 	</tr>	
+
+	
 
 	<% @users.each do |user| %>
 
@@ -15,10 +18,13 @@
 		<div class="user">
 			<span class="name">
 				<td><%= link_to user.last_name, user_path(user) %></td>
+				<td><%= user.role.role_name %></td>
 				<td>Action:</td>
 				<td><%= link_to 'Show', user %></td>
-				<td><%= link_to 'Edit', edit_user_path(user) %></td>
-				<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+				<% if can? :update, User %>
+					<td><%= link_to 'Edit', edit_user_path(user) %></td>
+				<% end %>
+				<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>	
 			</span>
 		</div>
 		</tr>
