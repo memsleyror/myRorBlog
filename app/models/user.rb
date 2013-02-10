@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :posts
   has_many :comments
-  attr_accessible :email, :first_name, :last_name, :profile_pic, :string
+  attr_accessible :email, :first_name, :last_name, :profile_pic, :string, :id
   attr_accessible :role_id, :role_name
   mount_uploader :profile_pic, ImageUploader
 end

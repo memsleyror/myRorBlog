@@ -24,8 +24,10 @@
 				<% if can? :update, User %>
 					<td><%= link_to 'Edit', edit_user_path(user) %></td>
 				<% end %>
+				<% if can? :destroy, User %>
 				<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>	
-			</span>
+				<% end %>
+			</span>			
 		</div>
 		</tr>
 	<% end %>	
