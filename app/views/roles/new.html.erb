@@ -1,16 +1,31 @@
-<h1>Create a New Role</h1>
-<p>Find me in app/views/roles/new.html.erb</p>
+<!--<h1>Create a New Role</h1>-->
 
 
 <%= form_for @role do |f| %>
+	<legend>Create a New Role</legend>
 	<p>
-		<%= f.label :role_name %><br/>
-		<%= f.text_field :role_name %>
+		<label><%= f.label :role_name %></label>
+		<input type="text" placeholder="Enter role here"<%= f.text_field :role_name %>
 	</p>
 
 	<p>
-		<%= f.submit "Create" %>
+		<button type="submit" class="btn">Create</button>
 	</p>
 
 
 <% end %>
+
+<!--
+<form>
+  <fieldset>
+    <legend>Legend</legend>
+    <label>Label name</label>
+    <input type="text" placeholder="Type something…">
+    <span class="help-block">Example block-level help text here.</span>
+    <label class="checkbox">
+      <input type="checkbox"> Check me out
+    </label>
+    <button type="submit" class="btn">Submit</button>
+  </fieldset>
+</form>
+-->
