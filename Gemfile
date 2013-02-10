@@ -11,6 +11,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'cancan'
 gem 'devise'
+gem 'nested_form'
 
 group :development do
   gem 'sqlite3'

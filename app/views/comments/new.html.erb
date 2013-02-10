@@ -10,7 +10,7 @@
 		
 		<%= f.label "Post" %><br/>
 		<%= f.collection_select :post_id, Post.all, :id , :title %><br/>
-		<%= f.text_field :post_id, :value => @comment.post %>
+		
 		<%= f.hidden_field :user_id, :value => current_user.id %>
 	</p>
 

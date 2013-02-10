@@ -13,6 +13,13 @@
 		<%= f.collection_select :user_id, User.all, :id , :last_name %>
 	</p>
 
+	<%= f.fields_for :comments do |builder| %>
+		<fieldset>
+			<%= builder.label :user_comment, "Comment" %><br/>
+			<%= builder.text_area :user_comment %>
+		</fieldset>
+	<% end %>
+
 	<p>
 		<%= f.submit "Update" %>
 	</p>

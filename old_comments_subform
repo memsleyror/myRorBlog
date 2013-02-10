@@ -1,0 +1,17 @@
+<table>
+
+	<% @post.comments.each do |comment| %>
+		<tr>
+		<div class "comment">
+			<td><%= comment.user_comment %></td>
+			<td>(<%= comment.user.last_name %>)</td>
+			<!--<td><%= link_to 'Show', comment %></td>-->
+			<td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+			<td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
+		</div>
+		</tr>
+	<% end %>
+
+</table><br><br>
+
+<%= link_to "New Comment", new_comment_path(@post.id)%>
