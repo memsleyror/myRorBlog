@@ -3,11 +3,13 @@ MyBlog::Application.routes.draw do
 
 
 
-  devise_for :users
+  devise_for :users, :path_prefix => 'my'
 
-  resources :comments
+
   resources :users
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :roles
 
   get "welcome/index"

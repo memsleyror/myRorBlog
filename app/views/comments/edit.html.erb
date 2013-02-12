@@ -2,16 +2,12 @@
 <h1>Edit Comment</h1>
 
 
-<%= form_for @comment do |f| %>
+<%= form_for [@post, @comment] do |f| %>
 	<p>
 		<%= f.label "Comment" %><br/>
 		<%= f.text_area :user_comment %><br/>
 		
-		<%= f.label "Post" %><br/>
-		<%= f.collection_select :post_id, Post.all, :id , :title %><br/>
 		
-		<%= f.label "User" %><br/>
-		<%= f.collection_select :user_id, User.all, :id , :last_name %>
 	</p>
 
 	<p>

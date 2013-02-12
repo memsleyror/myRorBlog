@@ -1,6 +1,6 @@
 
 
-<%= nested_form_for @post do |f| %>
+
 	<p>
 		<h1><%= @post.title %></h1><br/>
 		<%= @post.body %>
@@ -13,14 +13,27 @@
 
 <h3>Comments</h3>
 
-<%= f.fields_for :comments do |comment_form| %>
-  <%= comment_form.text_field :user_comment %>
-  <%= comment_form.link_to_remove "Remove this comment" %>
-<% end %>
-<p><%= f.link_to_add "Add a comment", :comments %></p>
+<table>
+
+	<% @post.comments.each do |comment| %>
+	  <% next if comment.new_record? %>
+		<tr>
+		<div class "comment">
+			<td><%= comment.user_comment %></td>
+			<td>(<%= comment.user.last_name %>)</td>
+			<!--<td><%#= link_to 'Show', comment %></td>-->
+			<td><%= link_to 'Edit', edit_post_comment_path(@post,comment) %></td>
+			<td><%= link_to 'Destroy', [@post, comment], :confirm => 'Are you sure?', :method => :delete %></td>
+		</div>
+		</tr>
+	<% end %>
+
+</table><br><br>
 
 
+<%= form_for([@post, @new_comment]) do |f| %>
 
-
+  		<%= f.text_area :user_comment %><br/>
+		<%= f.submit "Save Comment" %>
 
 <% end %>

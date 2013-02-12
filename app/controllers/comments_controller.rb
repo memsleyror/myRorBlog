@@ -12,22 +12,30 @@ class CommentsController < ApplicationController
   end
 
   def edit
-	@comment = Comment.find(params[:id])
+	@post = Post.find(params[:post_id])
+  @comment = Comment.find(params[:id])
   end
 
+  # /posts/4/comments
   def create
-	@comment = Comment.new(params[:comment])
+  	@post = Post.find(params[:post_id])
+  	@comment = @post.comments.build(params[:comment])
+  	@comment.user_id = current_user.id
+  	# @post = Post.find(params[:post_id])
+	# @comment = Comment.new(params[:comment])
 	if @comment.save
-		redirect_to @comment
+		redirect_to @post
 	else
 		render :edit
 	end
   end
 
   def update
-	@comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+	  #@comment = Comment.find(params[:id])
 	if @comment.update_attributes(params[:comment])
-		redirect_to @comment
+		redirect_to @post
 	else
 		render :edit
 	end

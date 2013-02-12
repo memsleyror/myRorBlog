@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def show
   	@post = Post.find(params[:id])
+  	@new_comment = Comment.new
   end
 
   def new
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
 
   def update
 	@post = Post.find(params[:id])
+	
 	if @post.update_attributes(params[:post])
 		redirect_to @post
 	else

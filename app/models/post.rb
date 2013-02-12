@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
   attr_accessible :body, :title, :comments_attributes
   attr_accessible :user_id, :post_id
   accepts_nested_attributes_for :comments, :allow_destroy => true
+
 end
