@@ -9,44 +9,78 @@
 		</head>
 <body>
 	<div class="container">
-		<header>
-			<h1>Rookie on Rails Blog</h1>
-			<nav>
-				<ul class="inline">
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Posts", posts_path %></li>
+		
+		
+		<div class="navbar navbar-inverse">
+  			<div class="navbar-inner">
+				<ul class="nav">
+			      <li class="active"><%= link_to "Home", root_path %></li>
+			      <li><%= link_to "Posts", posts_path %></li>
 					<% if can? :update, User %>
-						<li><%= link_to "Users", users_path %></li>
-						<li><%= link_to "Roles", roles_path %></li>
+					  <li><%= link_to "Users", users_path %></li>
+					  <li><%= link_to "Roles", roles_path %></li>
 					<% end %>
-				</ul>
-			</nav>
-		</header>
+			    </ul>
+			</div>
+		</div>	
 
-		<div id="user_nav">
-				<% if user_signed_in? %>
-				  Logged in as <strong><%= current_user.email %></strong>.
-				  <%= link_to 'Edit profile', edit_user_registration_path %> |
-				  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-				<% else %>
-				  <%= link_to "Sign up", new_user_registration_path %> |
-				  <%= link_to "Login", new_user_session_path %>
-				<% end %>
-		</div>
+		<div class="row">
+			<div class="span6">
+				<header>
+					<h1>Rookie on Rails Blog</h1>
+				</header>			
+			</div>	
+			<div class="span6">
+				<div id="user_nav">
+								<% if user_signed_in? %>
+								  Logged in as <strong><%= current_user.email %></strong>.
+								  <%= link_to 'Edit profile', edit_user_registration_path %> |
+								  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+								<% else %>
+								  <%= link_to "Sign up", new_user_registration_path %> |
+								  <%= link_to "Login", new_user_session_path %>
+								<% end %>
+				</div>
+			</div>	
+		</div>	
+
+		<div class="row">
+				<div class="span9">
+
+						<!--<header>
+							<h1>Rookie on Rails Blog</h1>
+							<nav>
+								<ul class="inline">
+									<li><%#= link_to "Home", root_path %></li>
+									<li><%#= link_to "Posts", posts_path %></li>
+									<%# if can? :update, User %>
+										<li><%#= link_to "Users", users_path %></li>
+										<li><%#= link_to "Roles", roles_path %></li>
+									<%# end %>
+								</ul>
+							</nav>
+							
+						</header>-->
+
+						
 
 
-		<%= yield %>
+						<%= yield %>
 
-			
+				</div>
 
-			
-		<footer>
-			<ul class="inline">
-	 		 	<li>&copy; 2013 Mike Emsley</li>
-	 		 	<li>About</li>
-	 		 	<li>Legal</li>
-			</ul>	
-		</footer>	
+				<div class="span3">
+					<h2>About Us</h2>
+				</div>
+
+		</div>			
+				<footer>
+					<ul class="inline">
+			 		 	<li>&copy; 2013 Mike Emsley</li>
+			 		 	<li>About</li>
+			 		 	<li>Legal</li>
+					</ul>	
+				</footer>	
 
 	</div>
 </body>

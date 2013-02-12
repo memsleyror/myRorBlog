@@ -1,29 +1,27 @@
 
 
-<h1>This is the Roles Index</h1>
+<h2>This is the Roles Index</h2>
 
 <%= link_to "New Role", new_role_path %><br><br>
 
-<div class="roles">
+<!--<div class="roles">-->
 	
-	<table>
-		<tr>
-			<th>Role</th>
-		</tr>
+	<table class="table table-striped table-condensed">
+		
 	<% @roles.each do |role| %>
 		<tr>
-		<div class="role">
+		<!--<div class="role">-->
 
-			<span class="name">
+			<!--<span class="name">-->
 				<td><%= link_to role.role_name, role %></td>
-				<td>Action:</td>
+				
 				<td><%= link_to 'Show', role %></td>
 				<td><%= link_to 'Edit', edit_role_path(role) %></td>
 				<td><%= link_to 'Destroy', role, :confirm => 'Are you sure?', :method => :delete %></td>
-			</span>
+			<!--</span>-->
 			
-		</div>
+		<!--</div>-->
 		</tr>
 	<% end %>
 	</table>	
-</div>	
+<!--</div>	-->

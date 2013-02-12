@@ -19,7 +19,7 @@
 
 require 'faker'
 
-def initalize
+#def initalize
 #10.times do
 
 #	new_user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, role_id: 7)
@@ -30,4 +30,4 @@ def initalize
 
 p = Post.create(title: "Lorem Post", body: Faker::Lorem.sentences(3).join(" "), user_id: 8)
 
-end
+#end
