@@ -15,6 +15,7 @@ gem 'nested_form'
 
 group :development do
   gem 'sqlite3'
+  gem 'faker'
 end
 
 gem 'pg'
