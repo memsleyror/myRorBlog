@@ -12,8 +12,9 @@
 
 
 <h3>Comments</h3>
+<input type="button" id="button" value="Show/Hide Comments" />
 
-<table>
+<table class = "showhide" style="display: none">
 
 	<% @post.comments.each do |comment| %>
 	  <% next if comment.new_record? %>
@@ -39,3 +40,12 @@
 		<%= f.submit "Save Comment" %>
 
 <% end %>
+
+<!--
+<script>
+
+$("#button").click(function(){
+$(".showhide").toggle();
+});
+
+</script>-->
