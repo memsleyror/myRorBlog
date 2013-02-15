@@ -1,0 +1,63 @@
+since i've already installed pg locally, do i have do anything other than point to it?
+
+rails new appname --skip-test-unit
+adjust gemfile - do i do all at once? no
+
+make development sqlite
+	group :development do
+  	 	gem 'sqlite3'
+	end
+
+	group :production do
+  	 	gem 'pg'
+	end
+
+bundle install
+check localhost for rails start page
+
+add this to gemfile:
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+bundle
+
+rails generate rspec:install
+
+rake db:migrate - not yet?
+rake db:test:prepare - not yet?
+
+git init
+modify git ignore
+git add .
+git commit -m
+deleted files: git add -u
+
+set up git hub - no README!
+git push origin master
+
+set up heroku account - new project? when i push does it automatically know it's a new project?
+create a new project
+gem install heroku
+git push heroku master
+
+devise - modify user model - need to add roles too
+rails g devise:install
+rails g devise user
+rake db:migrate
+rails g devise:views
+rails g migration add_username_to_users username - do it in first migration
+devise wiki
+add my prefix on users
+cancan
+
+rspec - run a simple test
+carrierwave/rmagick
+bootstrap
+
+seed/faker - local and heroku
+
+mailer
+
+javascript/jquery - toggle
+ajax - delete a row

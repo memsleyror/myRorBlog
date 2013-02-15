@@ -9,7 +9,7 @@
 	<table class="table table-striped table-condensed">
 		
 	<% @roles.each do |role| %>
-		<tr>
+		<tr id="role-<%= role.id %>">
 		<!--<div class="role">-->
 
 			<!--<span class="name">-->
@@ -17,7 +17,7 @@
 				
 				<td><%= link_to 'Show', role %></td>
 				<td><%= link_to 'Edit', edit_role_path(role) %></td>
-				<td><%= link_to 'Destroy', role, :confirm => 'Are you sure?', :method => :delete %></td>
+				<td><%= link_to 'Destroy', role, :confirm => 'Are you sure?', :method => :delete, :remote => true%></td>
 			<!--</span>-->
 			
 		<!--</div>-->

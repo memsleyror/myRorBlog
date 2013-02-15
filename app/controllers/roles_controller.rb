@@ -1,5 +1,6 @@
 class RolesController < ApplicationController
-  
+respond_to :js, :html
+
 def index
   	@roles = Role.all
 end
@@ -36,8 +37,10 @@ end
 
 def destroy
 	@role = Role.find(params[:id])
+	@role_id = @role.id
 	if @role.destroy
-		redirect_to roles_path
+		respond_with(@role_id, :location => roles_path)
+		#redirect_to roles_path
 	else
 		flash[:error] = "Error deleting role"
 		redirect_to @role
